@@ -26,22 +26,22 @@ push-release:
         env: PORT=$PORT
         cmd: sh target/bin/start
  #end
- deploy-to-cluster:
-    box:
-        id: alpine
-        cmd: /bin/sh
-    steps:
+deploy-to-cluster:
+   box:
+       id: alpine
+       cmd: /bin/sh
+   steps:
 
-    - bash-template
+   - bash-template
 
-    - script:
-        name: "Visualise Kubernetes config"
-        code: cat kubernetes.yml
+   - script:
+       name: "Visualise Kubernetes config"
+       code: cat kubernetes.yml
 
-    - kubectl:
-        name: deploy to kubernetes
-        server: $KUBERNETES_MASTER
-        #username: $KUBERNETES_USERNAME
-        token: $KUBERNETES_TOKEN
-        insecure-skip-tls-verify: true
-        command: apply -f kubernetes.yml
+   - kubectl:
+       name: deploy to kubernetes
+       server: $KUBERNETES_MASTER
+       #username: $KUBERNETES_USERNAME
+       token: $KUBERNETES_TOKEN
+       insecure-skip-tls-verify: true
+       command: apply -f kubernetes.yml
