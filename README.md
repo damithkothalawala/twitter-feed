@@ -1,3 +1,7 @@
+Buid Status
+====
+[![wercker status](https://app.wercker.com/status/adf9784153149cebd6b79c52be9bdf67/m/master "wercker status")](https://app.wercker.com/project/byKey/adf9784153149cebd6b79c52be9bdf67)
+
 About
 =====
 
