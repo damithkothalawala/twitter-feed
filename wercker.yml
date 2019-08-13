@@ -10,6 +10,6 @@ build:
     - install-packages:
         packages: maven
     - script:
-        name: maven build
-        code: mvn clean assembly:assembly
+        name: maven build -DskipTests
+        code: mvn clean assembly:assembly -DskipTests
 #Push the docker image with our built and tested application to Docker Hub
